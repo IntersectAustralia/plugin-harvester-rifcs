@@ -1,0 +1,8 @@
+{
+    "harvester": {
+        "type": "xml",
+        "xml": {
+            "fileLocation": "${test.dir}/complex.xml"
+        }
+    }
+}

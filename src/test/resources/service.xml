@@ -1,0 +1,49 @@
+<registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
+	<registryObject group="RIF-CS Examples">
+		<key>service1</key>
+		<originatingSource>
+			http://demo.ands.org.au/registry/orca/register_my_data
+		</originatingSource>
+		<service type="create" dateModified="2012-10-17T04:32:44Z">
+			<name type="primary">
+				<namePart>EVM-7 Environmental Monitor</namePart>
+			</name>
+			<location>
+				<address>
+					<physical type="streetAddress">
+						<addressPart type="addressLine">
+							<p> 123 Example St</p>
+							<p> Example Suburb NSW 2000</p>
+						</addressPart>
+					</physical>
+				</address>
+			</location>
+			<relatedObject>
+				<key>party1</key>
+				<relation type="isManagedBy" />
+			</relatedObject>
+			<relatedObject>
+				<key>Collection1</key>
+				<relation type="produces" />
+			</relatedObject>
+			<relatedObject>
+				<key>activity1</key>
+				<relation type="hasAssociationWith" />
+			</relatedObject>
+			<description type="full">
+				<span
+					style="color: rgb(54, 54, 54); font-family: Arial, Helvetica, Verdana, sans-serif; font-size: 13px; line-height: 17px; ">Able to replace multiple instruments, EVM-7 can
+					simultaneously measure and log particulates (mass concentration),
+					VOCs, toxic gas, CO2, relative humidity, and temperature. Air
+					velocity may also be measured via optional accessory. While dial-in
+					impactor allows for accelerated selection of particulate settings
+					without disassembly, built-in sampling pump assists in collection
+					of particulates. Real-time measurement is ensured via light
+					scattering photometer mass concentration engine.</span>
+			</description>
+			<accessPolicy>http://www.serviceaccesspolicyexample.com.au</accessPolicy>
+		</service>
+	</registryObject>
+</registryObjects>

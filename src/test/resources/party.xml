@@ -1,0 +1,39 @@
+<registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
+	<registryObject group="RIF-CS Examples">
+		<key>party1</key>
+		<originatingSource>
+http://demo.ands.org.au/registry/orca/register_my_data
+</originatingSource>
+		<party type="person" dateModified="2012-10-17T04:12:57Z">
+			<identifier type="AU-ANL:PEAU">nla.party-1234</identifier>
+			<name type="primary">
+				<namePart type="family">Doe</namePart>
+				<namePart type="given">Sally</namePart>
+			</name>
+			<location>
+				<address>
+					<physical type="streetAddress">
+						<addressPart type="addressLine">
+<p> 123 Example St</p> <p> Example Suburb NSW 2000</p>
+</addressPart>
+					</physical>
+				</address>
+			</location>
+			<relatedObject>
+				<key>Activity1</key>
+				<relation type="isFundedBy" />
+			</relatedObject>
+			<relatedObject>
+				<key>Collection1</key>
+				<relation type="isCollectorOf" />
+			</relatedObject>
+			<subject type="anzsrc-for">0601</subject>
+			<subject type="anzsrc-for">05</subject>
+			<description type="brief">
+Sally Doe teaches in the Centre for Water Toxicity Research. Her research is into Chronic Toxicity of Selected Synthetic Based Muds to Fish has been published in multiple journals around the globe.&#160;
+</description>
+		</party>
+	</registryObject>
+</registryObjects>

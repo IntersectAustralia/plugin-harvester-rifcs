@@ -1,0 +1,137 @@
+<registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
+	<registryObject group="RIF-CS Examples">
+		<key>Collection1</key>
+		<originatingSource>
+			http://demo.ands.org.au/registry/orca/register_my_data
+		</originatingSource>
+		<collection dateAccessioned="2012-06-12T00:00:00Z"
+			dateModified="2012-10-01T00:00:00Z" type="collection">
+			<dates type="published">
+				<date type="dateFrom" dateFormat="W3CDTF">2001-04-04T00:00:00Z</date>
+			</dates>
+			<name type="primary">
+				<namePart type="">
+					Chronic Toxicity of Selected Synthetic Based Muds to Fish
+				</namePart>
+			</name>
+			<description type="full">
+				Toxicity tests are important for assessing the effects of complex chemical
+				mixtures, such as waste drilling mud, on aquatic ecosystems. When
+				waste drilling mud is released into the marine environment, strong
+				ocean currents perhaps separate the drilling mud into a solid phase
+				(SP) and a suspended particulate phase (SPP). A comprehensive
+				assessment of drilling mud and base oil was carried out in the
+				laboratory for acute fish toxicity (freshwater fish, marine fish,
+				and benthic organisms) and biodegradability. The results presented
+				in this paper indicate that the LC50 96 h for fresh water, marine
+				and benthic organisms was in the order of base oil &gt; SP&gt; SSP.
+				The 28-day biodegradability of base oil was also more than that of
+				drilling mud. The results also showed that nonaqueous drilling
+				fluids (NADFs) are readily biodegradable. The Spearmen results
+				clearly showed the effects on fish populations from the discharge of
+				drilling mud into aquatic systems. The results showed that the use
+				of NADFs instead of water-based fluids (WBFs) would have lesser
+				adverse impact on the environment.
+			</description>
+			<description type="brief">
+				<span class="tx">Chronic Toxicity of Selected Synthetic Based Muds
+					to Fish in Western Australia.</span>
+			</description>
+			<rights>
+				<rightsStatement>Attribution 2.0 Generic (CC BY 2.0)</rightsStatement>
+				<licence type="CC-BY" />
+			</rights>
+			<identifier type="doi">10.1234\example.doi.1234</identifier>
+			<location>
+				<address>
+					<electronic type="url">
+						<value>
+							http://example.collection.location.com/listCollections.php
+						</value>
+					</electronic>
+					<physical type="streetAddress">
+						<addressPart type="addressLine">
+							<p> 123 Example St</p>
+							<p> Example Suburb NSW 2000</p>
+						</addressPart>
+					</physical>
+				</address>
+			</location>
+			<relatedObject>
+				<key>party2</key>
+				<relation type="isManagedBy">
+					<url />
+				</relation>
+			</relatedObject>
+			<relatedObject>
+				<key>party1</key>
+				<relation type="hasCollector">
+					<url />
+				</relation>
+			</relatedObject>
+			<relatedObject>
+				<key>activity14</key>
+				<relation type="isOutputOf">
+					<url />
+				</relation>
+			</relatedObject>
+			<relatedObject>
+				<key>service1</key>
+				<relation type="isProducedBy">
+					<url />
+				</relation>
+			</relatedObject>
+			<subject type="anzsrc-for">050202</subject>
+			<subject type="anzsrc-for">040502</subject>
+			<subject type="anzsrc-for">060108</subject>
+			<coverage>
+				<temporal>
+					<date type="dateFrom" dateFormat="W3CDTF">2000-04-04T00:00:00Z</date>
+					<date type="dateTo" dateFormat="W3CDTF">2010-10-20T00:00:00Z</date>
+				</temporal>
+				<spatial type="kmlPolyCoords">
+					118.445312,-35.241653 113.874999,-32.616779 112.117187,-22.832470 116.511718,-33.647165
+					118.445312,-35.241653
+				</spatial>
+			</coverage>
+			<citationInfo>
+				<citationMetadata>
+					<identifier type="doi">10.1234\example.doi.1234</identifier>
+					<contributor seq="1">
+						<namePart type="Smith">John</namePart>
+					</contributor>
+					<contributor seq="2">
+						<namePart type="Doe">Sally</namePart>
+					</contributor>
+					<title>
+						Chronic Toxicity of Selected Synthetic Based Muds to Fish
+					</title>
+					<version>v1.1</version>
+					<publisher>University of Western Australia</publisher>
+					<placePublished>Perth Western Australia</placePublished>
+					<date type="issued">11/04/2005</date>
+					<url>
+						http://example.collection.location.com/listCollections.php
+					</url>
+					<context>none</context>
+				</citationMetadata>
+			</citationInfo>
+			<relatedInfo type="publication">
+				<identifier type="isbn">9780852345306</identifier>
+				<title>Evolution: Fact or Fiction?: Fact or Fiction?</title>
+				<notes />
+			</relatedInfo>
+			<relatedInfo type="metadata">
+				<title>EML</title>
+				<identifier type="uri">http://data.example.com/meta-eml.xml</identifier>
+				<format>
+					<identifier type="mediaType">framework-attributes+xml</identifier>
+					<identifier type="uri">http://some.schema.location/</identifier>
+				</format>
+				<notes>This is the EML version of the metadata</notes>
+			</relatedInfo>
+		</collection>
+	</registryObject>
+</registryObjects>
