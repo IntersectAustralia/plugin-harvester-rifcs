@@ -36,4 +36,9 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <scm>
+    <url>https://github.com/IntersectAustralia/plugin-harvester-rifcs</url>
+    <developerConnection>scm:git:https://github.com/IntersectAustralia/plugin-harvester-rifcs/plugin-harvester-rifcs.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 </project>
