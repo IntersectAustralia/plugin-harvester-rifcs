@@ -901,7 +901,7 @@ public class RIFCSHarvester extends GenericHarvester {
 		if (!relatedInfo.getTitle().isEmpty()) {
 			relatedInfoDetailsObject.put("title", relatedInfo.getTitle());
 		}
-		if (!relatedInfo.getNotes().isEmpty()) {
+		if (relatedInfo.getNotes() != null && !relatedInfo.getNotes().isEmpty()) {
 			relatedInfoDetailsObject.put("notes", relatedInfo.getNotes());
 		}
 		return relatedInfoDetailsObject;
