@@ -2,7 +2,47 @@
     "harvester": {
         "type": "xml",
         "xml": {
-            "fileLocation": "${test.dir}/activity.xml"
+            "fileLocation": "${test.dir}/activity.xml",
+            "recordIDPrefix": "au.edu.uts/activity/",
+            "ignoredFields": [],
+            "includedFields" : ["ID", "Submit_Year", "Start_Year", "Title", "Institution", "Investigators", "Discipline", "Description"],
+	        "filedsMapping": {
+                "identifier.purl": "ID",
+                "existenceDates.endDate": "Submit_Year",
+                "existenceDates.startDate": "Start_Year",
+                "name.primary": "Title",
+                "relatedObject.isMemberOf": "Institution",
+                "relatedObject.isManagedBy": "Investigators",
+                "subject.anzsrc-for": "Discipline",
+                "description.brief": "Description",
+	        }
+        }
+    },
+
+    "transformer": {
+        "curation": [],
+        "metadata": []
+    },
+    "curation": {
+        "neverPublish": true,
+        "alreadyCurated": true
+    },
+
+    "transformerOverrides": {
+        "jsonVelocity": {
+            "templatesPath" : "${fascinator.home}/templates/activities",
+            "portalId": "Activities"
+        }
+    },
+
+    "indexer": {
+        "script": {
+            "type": "python",
+            "rules": "Activities.py"
+        },
+        "params": {
+            "repository.name": "Activities",
+            "repository.type": "Research Activities"
         }
     }
 }

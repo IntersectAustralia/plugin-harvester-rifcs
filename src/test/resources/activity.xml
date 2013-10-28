@@ -1,54 +1,34 @@
+<?xml version="1.0"?>
 <registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
-	<registryObject group="RIF-CS Examples">
-		<key>activity1</key>
-		<originatingSource>
-			http://demo.ands.org.au/registry/orca/register_my_data
-		</originatingSource>
-		<activity type="project" dateModified="2012-10-17T04:23:09Z">
-			<identifier type="arc">arc-1234</identifier>
-			<name type="primary">
-				<namePart>Western Basin Toxicity Studies WA</namePart>
-			</name>
-			<location>
-				<address>
-					<electronic type="url">
-						<value>http//:www.exampleactivityaddress.com.au</value>
-					</electronic>
-				</address>
-			</location>
-			<relatedObject>
-				<key>Collection1</key>
-				<relation type="hasOutput" />
-			</relatedObject>
-			<relatedObject>
-				<key>party1</key>
-				<relation type="isManagedBy" />
-			</relatedObject>
-			<subject type="anzsrc-for">040502</subject>
-			<subject type="anzsrc-for">0601</subject>
-			<subject type="anzsrc-for">050304</subject>
-			<description type="brief">
-				<div>
-					The purpose of this study is to evaluate the toxicity of used
-					drilling muds (drilling wastes) and their impact on gill&#160;
-				</div>
-				<div>
-					structure of the post larvae of tiger prawn Penaeus monodon.&#160;All
-					toxicity values must be&#160;
-				</div>
-				<div>
-					above the standard of Australia government (LC50&#163;30000
-					ppm SPP). Histological observation has shown&#160;
-				</div>
-				<div> that only haemocytic congestion in the gill lacunae of post
-					larvae has been recorded.</div>
-			</description>
-			<existenceDates>
-				<startDate dateFormat="W3CDTF">1995-03-11T00:00:00Z</startDate>
-				<endDate dateFormat="W3CDTF">2010-10-20T00:00:00Z</endDate>
-			</existenceDates>
-		</activity>
-	</registryObject>
+	<registryObject group="ands.org.au">
+        <key>351204</key>
+        <originatingSource>iris</originatingSource>
+        <activity type="project">
+            <identifier type="purl">http://purl.org/au-research/grants/nhmrc/604008</identifier>
+            <name type="primary">
+                <namePart>The Many Rivers Diabetes Prevention Program</namePart>
+            </name>
+            <location>
+                <address>
+                    <electronic type="url">
+                        <value>http://might.have.one.com/</value>
+                    </electronic>
+                </address>
+            </location>
+            <subject type="anzsrc-for">060205</subject>
+            <subject type="anzsrc-for">050202</subject>
+            <description type="brief">A type II diabetes and obesity prevention program for Primary school aged rural indigenous children</description>
+            <existenceDates>
+                <startDate>2004-01-01T00:00:00ZTTTT</startDate>
+                <endDate dateFormat="W3CDTF">2005-12-31T11:59:59Z</endDate>
+            </existenceDates>
+            <relatedObject>
+                <!-- maps to mint person -->
+                <key>MQ12345678</key>
+                <relation type="isManagedBy"/>
+            </relatedObject>
+        </activity>
+    </registryObject>
 </registryObjects>

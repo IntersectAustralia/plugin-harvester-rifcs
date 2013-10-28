@@ -1,8 +1,0 @@
-{
-    "harvester": {
-        "type": "xml",
-        "xml": {
-            "fileLocation": "${test.dir}/collection.xml"
-        }
-    }
-}
