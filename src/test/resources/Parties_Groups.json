@@ -15,7 +15,7 @@
                 "identifier.uri": "URI",
                 "identifier.AU-ANL:PEAU": "NLA_Party_Identifier",
                 "location.address.electronic.url": "Homepage",
-                "description.full": "Description",
+                "description.full": "Description"
 	        }
         }
     },

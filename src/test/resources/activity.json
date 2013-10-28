@@ -14,7 +14,7 @@
                 "relatedObject.isMemberOf": "Institution",
                 "relatedObject.isManagedBy": "Investigators",
                 "subject.anzsrc-for": "Discipline",
-                "description.brief": "Description",
+                "description.brief": "Description"
 	        }
         }
     },
