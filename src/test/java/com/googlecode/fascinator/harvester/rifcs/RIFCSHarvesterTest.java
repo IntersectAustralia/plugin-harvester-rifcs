@@ -84,8 +84,8 @@ public class RIFCSHarvesterTest {
 
 		Map<String, String> fieldValues = new HashMap<String, String>();
 		fieldValues.put("ID", "http://purl.org/au-research/grants/nhmrc/604008");
-//		fieldValues.put("Submit_Year", "2005");
-//		fieldValues.put("Start_Year", "2004");
+		fieldValues.put("Submit_Year", "2005");
+		fieldValues.put("Start_Year", "2004");
 		fieldValues.put("Title", "The Many Rivers Diabetes Prevention Program");
 		fieldValues.put("Institution", "");
 		fieldValues.put("Investigators", "MQ12345678");
@@ -124,12 +124,7 @@ public class RIFCSHarvesterTest {
 		fieldValues.put("URI", "http://mq.edu.au/department/3201");
 		fieldValues.put("NLA_Party_Identifier", "");
 		fieldValues.put("Homepage", "http://www.cogsci.mq.edu.au/");
-//		fieldValues.put("Description", "The Department of Cognitive Science is a research department which carries out research\n" +
-//				"and PhD supervision across a wide range of domains of cognitive science, including memory,\n" +
-//				"language, belief formation, perception in action, and reading. The Department hosts the\n" +
-//				"ARC Centre of Excellence in Cognition and its Disorders, which brings together researchers\n" +
-//				"from the Departments of Cognitive Science, Psychology and Linguistics at Macquarie University\n" +
-//				"and thirteen other national and international institutions.");
+		fieldValues.put("Description", "The Department of Cognitive Science is a research department which carries out research and PhD supervision across a wide range of domains of cognitive science, including memory, language, belief formation, perception in action, and reading. The Department hosts the ARC Centre of Excellence in Cognition and its Disorders, which brings together researchers from the Departments of Cognitive Science, Psychology and Linguistics at Macquarie University and thirteen other national and international institutions.");
 
 		assertFields(jsonSimple, fieldValues);
 	}
@@ -172,8 +167,8 @@ public class RIFCSHarvesterTest {
 		fieldValues.put("NLA_Party_Identifier", "http://nla.gov.au/nla.party-1234567");
 		fieldValues.put("ResearcherID", "12341234");
 		fieldValues.put("openID", "http://open.id/12341234");
-//		fieldValues.put("Personal_Homepage", "http://www.facebook.com/john.smith99");
-//		fieldValues.put("Staff_Profile_Homepage", "http://mq.edu.au/staff/mq12345678");
+		fieldValues.put("Personal_Homepage", "http://www.facebook.com/john.smith99");
+		fieldValues.put("Staff_Profile_Homepage", "http://mq.edu.au/staff/mq12345678");
 		fieldValues.put("Description", "Senior Lecturer in Faculty of Arts");
 
 		assertFields(jsonSimple, fieldValues);

@@ -21,7 +21,7 @@
             <subject type="anzsrc-for">050202</subject>
             <description type="brief">A type II diabetes and obesity prevention program for Primary school aged rural indigenous children</description>
             <existenceDates>
-                <startDate>2004-01-01T00:00:00ZTTTT</startDate>
+                <startDate>2004-01-01T00:00:00Z</startDate>
                 <endDate dateFormat="W3CDTF">2005-12-31T11:59:59Z</endDate>
             </existenceDates>
             <relatedObject>

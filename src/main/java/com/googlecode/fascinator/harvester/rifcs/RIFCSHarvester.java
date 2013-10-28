@@ -358,7 +358,7 @@ public class RIFCSHarvester extends GenericHarvester {
 		for (Identifier identifier : identifiers) {
 			String key = "identifier." + identifier.getType();
 			String csvFieldName = filedsMapping.getString("",key);
-			if(csvFieldName != "") {
+			if(!"".equals(csvFieldName)) {
 				this.data.put(csvFieldName, identifier.getValue());
 			}
 		}
@@ -387,7 +387,7 @@ public class RIFCSHarvester extends GenericHarvester {
 				}
 
 				String csvFieldName = filedsMapping.getString("",key.toString());
-				if (csvFieldName != "") {
+				if (!"".equals(csvFieldName)) {
 					this.data.put(csvFieldName, namePart.getValue());
 				}
 
@@ -447,7 +447,7 @@ public class RIFCSHarvester extends GenericHarvester {
 		if (!electronic.getType().isEmpty()) {
 			String key = "location.address.electronic." + electronic.getType();
 			String csvFieldName = filedsMapping.getString("",key);
-			if(csvFieldName != "") {
+			if(!"".equals(csvFieldName)) {
 				this.data.put(csvFieldName, electronic.getValue());
 			}
 		}
@@ -464,7 +464,7 @@ public class RIFCSHarvester extends GenericHarvester {
 		for (AddressPart addressPart : physical.getAddressParts()) {
 			String key = "location.address.physical." + addressPart.getType();
 			String csvFieldName = filedsMapping.getString("",key);
-			if (csvFieldName != "") {
+			if (!"".equals(csvFieldName)) {
 				this.data.put(csvFieldName, addressPart.getValue());
 			}
 		}
@@ -500,7 +500,7 @@ public class RIFCSHarvester extends GenericHarvester {
 				String key = "relatedObject." + relationType;
 				String csvFieldName = filedsMapping.getString("",key);
 
-				if (csvFieldName != "") {
+				if (!"".equals(csvFieldName)) {
 //					// for isMemberOf relation.
 //					if ("isMemberOf".equalsIgnoreCase(relationType)) {
 //						csvFieldName = csvFieldName + "_" + relations.indexOf(relation) + 1;
@@ -524,7 +524,7 @@ public class RIFCSHarvester extends GenericHarvester {
 		for (Subject subject : subjects) {
 			String key = "subject." + subject.getType();
 			String csvFieldName = filedsMapping.getString("",key);
-			if (csvFieldName != "") {
+			if (!"".equals(csvFieldName)) {
 				if(isMutiple) {
 					this.data.put(csvFieldName + "_" + (subjects.indexOf(subject) + 1), subject.getValue());
 				} else {
@@ -547,7 +547,7 @@ public class RIFCSHarvester extends GenericHarvester {
 		for (Description description : descriptions) {
 			String key = "description." + description.getType();
 			String csvFieldName = filedsMapping.getString("",key);
-			if(csvFieldName != "") {
+			if(!"".equals(csvFieldName)) {
 				this.data.put(csvFieldName, description.getValue());
 			}
 		}
@@ -683,8 +683,8 @@ public class RIFCSHarvester extends GenericHarvester {
 			String title = relatedInfo.getTitle();
 			String key = "relatedInfo." + relatedInfo.getType() + "." + title;
 			String csvFieldName = filedsMapping.getString("",key);
-			if(csvFieldName != "") {
-				this.data.put(csvFieldName, relatedInfo.getIdentifier());
+			if(!"".equals(csvFieldName)) {
+				this.data.put(csvFieldName, relatedInfo.getIdentifier().getValue());
 			}
 		}
 	}
@@ -767,25 +767,26 @@ public class RIFCSHarvester extends GenericHarvester {
 	 */
 	@SuppressWarnings("unchecked")
 	private void parseExistenceDatesForRIFCSElement(List<ExistenceDate> existenceDates) {
-		W3CDateFormat dateFormat = new W3CDateFormat(W3CDateFormat.Pattern.SECOND);
+		W3CDateFormat dateFormat = new W3CDateFormat();
 		String startYear = "";
 		String endYear = "";
 
 		for (ExistenceDate existenceDate : existenceDates) {
 			String startDateValue = existenceDate.getStartDate().getValue();
-			if(startYear.compareTo(startDateValue) >= 0) {
+
+			if("".equals(startYear) || startYear.compareTo(startDateValue) >= 0) {
 				startYear = startDateValue;
 			}
 
 			String endDateValue = existenceDate.getEndDate().getValue();
-			if(endYear.compareTo(endDateValue) <= 0) {
+			if("".equals(endYear) || endYear.compareTo(endDateValue) <= 0) {
 				endYear = endDateValue;
 			}
 		}
 
 		try {
-			startYear = dateFormat.parse(startYear).getYear() + "";
-			endYear = dateFormat.parse(endYear).getYear() + "";
+			startYear = (dateFormat.parse(startYear).getYear() + 1900)+ "";
+			endYear = (dateFormat.parse(endYear).getYear() + 1900) + "";
 
 			String key1 = "existenceDates.startDate";
 			String key2 = "existenceDates.endDate";

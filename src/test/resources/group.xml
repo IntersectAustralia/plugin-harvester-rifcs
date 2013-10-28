@@ -39,14 +39,7 @@
 				<key>3200</key>
 				<relation type="isMemberOf"/>
 			</relatedObject>
-			<description type="full">
-				The Department of Cognitive Science is a research department which carries out research
-		    and PhD supervision across a wide range of domains of cognitive science, including memory,
-		    language, belief formation, perception in action, and reading. The Department hosts the
-		    ARC Centre of Excellence in Cognition and its Disorders, which brings together researchers
-		    from the Departments of Cognitive Science, Psychology and Linguistics at Macquarie University
-		    and thirteen other national and international institutions.
-		  </description>
+			<description type="full">The Department of Cognitive Science is a research department which carries out research and PhD supervision across a wide range of domains of cognitive science, including memory, language, belief formation, perception in action, and reading. The Department hosts the ARC Centre of Excellence in Cognition and its Disorders, which brings together researchers from the Departments of Cognitive Science, Psychology and Linguistics at Macquarie University and thirteen other national and international institutions.</description>
 		</party>
 	</registryObject>
 </registryObjects>
