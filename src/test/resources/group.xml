@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
+	<registryObject group="Macquarie University, Australia">
+		<key>3201</key>
+		<originatingSource>idbank</originatingSource>
+		<party type="group">
+			<identifier type="local">2201</identifier>
+			<identifier type="handle">http://hdl.handle.net/1959.19/775</identifier>
+			<identifier type="uri">http://mq.edu.au/department/3201</identifier>
+			<name type="abbreviated">
+				<namePart type="title">COGSCI</namePart>
+			</name>
+			<name type="primary">
+				<namePart type="title">Cognitive Science</namePart>
+			</name>
+			<location>
+				<address>
+					<electronic type="email">
+						<value>cogsci@mq.edu.au</value>
+					</electronic>
+					<electronic type="url">
+						<value>http://www.cogsci.mq.edu.au/</value>
+					</electronic>
+					<physical>
+						<addressPart type="telephoneNumber">+61298509599</addressPart>
+					</physical>
+					<physical>
+						<addressPart type="faxNumber">+ </addressPart>
+					</physical>
+					<physical type="streetAddress">
+						<addressPart type="text">Department of Cognitive Science, W4A, Macquarie University, North Ryde, NSW 2109</addressPart>
+					</physical>
+				</address>
+			</location>
+			<relatedObject>
+				<!-- key is the department/budget code for groups -->
+				<key>3200</key>
+				<relation type="isMemberOf"/>
+			</relatedObject>
+			<description type="full">
+				The Department of Cognitive Science is a research department which carries out research
+		    and PhD supervision across a wide range of domains of cognitive science, including memory,
+		    language, belief formation, perception in action, and reading. The Department hosts the
+		    ARC Centre of Excellence in Cognition and its Disorders, which brings together researchers
+		    from the Departments of Cognitive Science, Psychology and Linguistics at Macquarie University
+		    and thirteen other national and international institutions.
+		  </description>
+		</party>
+	</registryObject>
+</registryObjects>

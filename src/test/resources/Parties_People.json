@@ -1,0 +1,83 @@
+{
+    "harvester": {
+        "type": "xml",
+        "xml": {
+            "fileLocation": "${test.dir}/people.xml",
+            "recordIDPrefix": "au.edu.uts/parties/people/",
+            "headerRow": true,
+            "delimiter": ",",
+            "ignoredFields": [],
+            "includedFields" : ["ID", "Given_Name", "Other_Names", "Family_Name", "Pref_Name", "Honorific", "Email", "Job_Title", "GroupID_1", "GroupID_2", "GroupID_3", "ANZSRC_FOR_1", "ANZSRC_FOR_2", "ANZSRC_FOR_3", "URI", "NLA_Party_Identifier", "ResearcherID", "openID", "Personal_URI", "Personal_Homepage", "Staff_Profile_Homepage", "Description"],
+            "filedsMapping": {
+                "identifier.local": "ID",
+                "name.primary.given": "Given_Name",
+                "name.primary.middle": "Other_Names",
+                "name.primary.family": "Family_Name",
+                "name.primary.pref": "Pref_Name",
+                "name.primary.title": "Honorific",
+                "location.address.electronic.email": "Email",
+                "name.primary.suffix": "Job_Title",
+                "relatedObject.isMemberOf": "GroupID_1",
+                "subject.anzsrc-for": "ANZSRC_FOR",
+                "identifier.uri": "URI",
+                "identifier.AU-ANL:PEAU": "NLA_Party_Identifier",
+                "identifier.researcherid": "ResearcherID",
+                "identifier.openid": "openID",
+                "relatedInfo.website.Personal Homepage": "Personal_Homepage",
+                "relatedInfo.website.Staff Homepage": "Staff_Profile_Homepage",
+                "description.full": "Description"
+	        }
+        }
+    },
+
+    "transformer": {
+        "curation": ["local"],
+        "metadata": ["ingest-relations", "jsonVelocity"]
+    },
+    "curation": {
+        "neverPublish": false,
+        "alreadyCurated": false
+    },
+
+    "transformerOverrides": {
+        "ingest-relations": {
+            "sourcePid": "metadata.json",
+            "sourcePath": ["data"],
+            "relations": {
+                "GroupID_1": {
+                    "prefix": "redbox-mint.googlecode.com/parties/group/",
+                    "relation": "isMemberOf",
+                    "reverseRelation": "hasMember"
+                },
+                "GroupID_2": {
+                    "prefix": "redbox-mint.googlecode.com/parties/group/",
+                    "relation": "isMemberOf",
+                    "reverseRelation": "hasMember"
+                },
+                "GroupID_3": {
+                    "prefix": "redbox-mint.googlecode.com/parties/group/",
+                    "relation": "isMemberOf",
+                    "reverseRelation": "hasMember"
+                }
+            }
+        },
+		"local": {
+            "template": "${server.url.base}published/detail/[[OID]]"
+        },
+        "jsonVelocity": {
+            "templatesPath" : "${fascinator.home}/templates/people",
+            "portalId": "Parties_People"
+        }
+    },
+
+    "indexer": {
+        "script": {
+            "type": "python",
+            "rules": "Parties_People.py"
+        },
+        "params": {
+            "repository.name": "People",
+            "repository.type": "Parties"
+        }
+    }
+}

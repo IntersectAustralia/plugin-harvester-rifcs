@@ -1,0 +1,63 @@
+{
+    "harvester": {
+        "type": "xml",
+        "xml": {
+            "fileLocation": "${test.dir}/group.xml",
+            "recordIDPrefix": "au.edu.uts/parties/group/",
+            "ignoredFields": [],
+            "includedFields" : ["ID", "Name", "Email", "Phone", "Parent_Group_ID", "URI", "NLA_Party_Identifier", "Homepage", "Description"],
+	        "filedsMapping": {
+                "identifier.local": "ID",
+                "name.primary.title": "Name",
+                "location.address.electronic.email": "Email",
+                "location.address.physical.telephoneNumber": "Phone",
+                "relatedObject.isMemberOf": "Parent_Group_ID",
+                "identifier.uri": "URI",
+                "identifier.AU-ANL:PEAU": "NLA_Party_Identifier",
+                "location.address.electronic.url": "Homepage",
+                "description.full": "Description",
+	        }
+        }
+    },
+
+    "transformer": {
+        "curation": ["local"],
+        "metadata": ["ingest-relations", "jsonVelocity"]
+    },
+    "curation": {
+        "neverPublish": false,
+        "alreadyCurated": false
+    },
+
+    "transformerOverrides": {
+        "ingest-relations": {
+            "sourcePid": "metadata.json",
+            "sourcePath": ["data"],
+            "relations": {
+                "Parent_Group_ID": {
+                    "prefix": "au.edu.uts/parties/group/",
+                    "relation": "isPartOf",
+                    "reverseRelation": "hasPart"
+                }
+            }
+        },
+        "local": {
+            "template": "${server.url.base}published/detail/[[OID]]"
+        },
+        "jsonVelocity": {
+            "templatesPath" : "${fascinator.home}/templates/groups",
+            "portalId": "Parties_Groups"
+        }
+    },
+
+    "indexer": {
+        "script": {
+            "type": "python",
+            "rules": "Parties_Groups.py"
+        },
+        "params": {
+            "repository.name": "Groups",
+            "repository.type": "Parties"
+        }
+    }
+}
