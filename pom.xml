@@ -53,4 +53,13 @@
 			<url>https://github.com/IntersectAustralia/plugin-harvester-rifcs/raw/master/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+
+
+	<repositories>
+		<!-- maven repo for ands plugin for rifcs -->
+		<repository>
+			<id>rifcs</id>
+			<url>https://github.com/IntersectAustralia/rifcs/raw/master/release</url>
+		</repository>
+	</repositories>
 </project>
