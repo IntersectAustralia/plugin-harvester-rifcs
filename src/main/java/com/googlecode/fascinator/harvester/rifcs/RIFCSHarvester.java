@@ -127,7 +127,9 @@ public class RIFCSHarvester extends GenericHarvester {
 			throw new HarvesterException("Could not find rif-cs file '"
 					+ filePath + "'");
 		}
-		filename = rifcsDataFile.getName();
+		
+		filename = options.getString(rifcsDataFile.getName(), "fileName");
+		
 
 		idPrefix = options.getString("", "recordIDPrefix");
 		ignoredFields = getStringList(options, "ignoreFields");
