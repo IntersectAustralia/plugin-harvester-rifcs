@@ -5,19 +5,19 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.ands.rifcs.base.AccessPolicy;
 import org.ands.rifcs.base.Activity;
 import org.ands.rifcs.base.Address;
 import org.ands.rifcs.base.AddressPart;
-import org.ands.rifcs.base.CitationDate;
 import org.ands.rifcs.base.CitationInfo;
-import org.ands.rifcs.base.CitationMetadata;
 import org.ands.rifcs.base.Collection;
-import org.ands.rifcs.base.CommonDateElement;
-import org.ands.rifcs.base.Contributor;
 import org.ands.rifcs.base.Coverage;
 import org.ands.rifcs.base.Description;
 import org.ands.rifcs.base.Electronic;
@@ -37,17 +37,11 @@ import org.ands.rifcs.base.RelatedInfo;
 import org.ands.rifcs.base.RelatedObject;
 import org.ands.rifcs.base.Relation;
 import org.ands.rifcs.base.Right;
-import org.ands.rifcs.base.RightsInfo;
-import org.ands.rifcs.base.RightsTypedInfo;
 import org.ands.rifcs.base.Service;
-import org.ands.rifcs.base.Spatial;
 import org.ands.rifcs.base.Subject;
-import org.ands.rifcs.base.Temporal;
-import org.ands.rifcs.base.TemporalCoverageDate;
 import org.ands.rifcs.ch.RIFCSReader;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.IOUtils;
-import org.json.simple.JSONArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -191,19 +185,23 @@ public class RIFCSHarvester extends GenericHarvester {
 	private String parseRegistryObject(RegistryObject registryObject)
 			throws HarvesterException {
 		String recordId = Integer.toString(currentId++);
+		
 		this.data = new JsonObject();
 		try {
 			this.data.put("group", registryObject.getGroup());
 			this.data.put("key", registryObject.getKey());
 			this.data.put("originatingSource",
 					registryObject.getOriginatingSource());
-			RIFCSElement element = registryObject.getClassObject();
+			RIFCSElement element = registryObject.getClassObject();			
 			parseRIFCSElement(element);
 		} catch (RIFCSException e) {
 			throw new HarvesterException(e);
 		}
 		log.debug(this.data.toString());
 		JsonObject meta = new JsonObject();
+		if (this.data.containsKey("ID")) {
+		    recordId = this.data.get("ID").toString();
+		}
 		meta.put("dc.identifier", idPrefix + recordId);
 
 		String oid = DigestUtils.md5Hex(filename
