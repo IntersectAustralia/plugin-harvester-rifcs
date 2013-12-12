@@ -55,10 +55,10 @@ This plugin will read all the elements in xml data source file and build an iden
 their path which comprise of element name and the value of attribute 'type' if have (and sometimes other necessary
 info if needed).
 
-(3) What are the field name recognised by Mint?
-    Parties_People: http://www.redboxresearchdata.com.au/documentation/system-administration/administering-mint/loading-data/loading-people-data
-    Parties_Group:  http://www.redboxresearchdata.com.au/documentation/system-administration/administering-mint/loading-data/loading-group-data
-    Activities:     http://www.redboxresearchdata.com.au/documentation/system-administration/administering-mint/loading-data/loading-activity-data
+(3) What are the field name recognised by Mint?    
+	Parties_People: http://www.redboxresearchdata.com.au/documentation/system-administration/administering-mint/loading-data/loading-people-data   
+	Parties_Group:  http://www.redboxresearchdata.com.au/documentation/system-administration/administering-mint/loading-data/loading-group-data   
+	Activities:     http://www.redboxresearchdata.com.au/documentation/system-administration/administering-mint/loading-data/loading-activity-data   
 
 (4) An concrete example.
 
