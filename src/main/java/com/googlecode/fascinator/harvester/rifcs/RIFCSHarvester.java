@@ -205,7 +205,7 @@ public class RIFCSHarvester extends GenericHarvester {
 		meta.put("dc.identifier", idPrefix + recordId);
 
 		String oid = DigestUtils.md5Hex(filename
-				+ this.data.get("group") + recordId);
+				+ idPrefix + recordId);
 		storeJsonInObject(this.data, meta, oid);
 		return oid;
 	}
